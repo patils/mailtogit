@@ -1,3 +1,8 @@
-cd ~/source/linux/linux-pdx86
+#! /bin/bash
+
+echo "Enter the absolute path for the project to apply this patch to: " >&2
+read gitdir
+pushd $(gitdir)
 git am --abort
+popd
 rm -f ~/incoming/*
